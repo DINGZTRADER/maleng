@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Maleng Travel - Specialized East African Destination Management Company offering bespoke safaris, high-altitude treks, and accessible travel from Kampala, Uganda." />
+    <title>Maleng Travel | Premium East African Safaris & Expeditions</title>
+  </head>
+  <body>
+    
+    <!-- Navigation Header -->
+    <header class="header-main">
+      <div class="container header-container">
+        <a href="#home" class="logo-group" id="nav-logo">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">Maleng<span>Travel</span></div>
+        </a>
+        
+        <nav class="nav-menu" id="nav-menu">
+          <span class="nav-link active" data-section="home">Home</span>
+          <span class="nav-link" data-section="explore">Explore Uganda</span>
+          <span class="nav-link" data-section="expeditions">Guided Expeditions</span>
+          <span class="nav-link" data-section="accessible">Accessible Journeys</span>
+          <span class="nav-link" data-section="partners">Trade & Partners</span>
+          <span class="nav-link" data-section="integrity">Corporate Integrity</span>
+        </nav>
+        
+        <div class="nav-cta">
+          <button class="btn-gold" id="header-cta-btn">
+            Custom Trip Builder
+          </button>
+        </div>
+        
+        <div class="mobile-menu-btn" id="mobile-menu-toggle">☰</div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="app">
+      
+      <!-- 1. Home Section -->
+      <section id="home-view" class="section-view active">
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <div class="container hero-grid">
+            <div class="hero-content animate-fade-in-up">
+              <span class="section-tag">Destination Management Company</span>
+              <h1>Bespoke East African <span>Expeditions</span></h1>
+              <p>Specializing in custom luxury & mid-range safaris, high-altitude mountaineering, and fully accessible travel experiences across Uganda, Rwanda, and Kenya.</p>
+              <div class="hero-cta-group">
+                <button class="btn-gold" id="hero-cta-primary">Build Your Custom Trip</button>
+                <button class="btn-outline" id="hero-cta-secondary">Explore Safaris</button>
+              </div>
+            </div>
+            
+            <div class="hero-visual animate-fade-in">
+              <div class="hero-visual-bg">
+                <div class="hero-visual-art">
+                  <!-- Custom SVG safari graphic -->
+                  <svg class="hero-safari-scene" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#1c2b20"/>
+                        <stop offset="60%" stop-color="#121c16"/>
+                        <stop offset="100%" stop-color="#0a0f0c"/>
+                      </linearGradient>
+                      <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#f3cf5a"/>
+                        <stop offset="100%" stop-color="#d4af37" stop-opacity="0.3"/>
+                      </linearGradient>
+                    </defs>
+                    <rect width="800" height="600" fill="url(#skyGrad)"/>
+                    <circle cx="650" cy="220" r="120" fill="url(#sunGrad)"/>
+                    <!-- Mountain silhouette (Rwenzori) -->
+                    <path d="M 0 600 L 150 400 L 250 480 L 400 320 L 520 420 L 680 260 L 800 400 L 800 600 Z" fill="#080c09" opacity="0.8"/>
+                    <!-- Second mountain silhouette -->
+                    <path d="M 0 600 L 120 450 L 300 300 L 480 480 L 600 380 L 720 490 L 800 440 L 800 600 Z" fill="#0c120e" opacity="0.9"/>
+                    <!-- Savanna Tree and Acacia details -->
+                    <path d="M 680 500 Q 670 420 660 400 Q 640 400 610 395 Q 630 390 665 390 Q 670 380 660 360 Q 640 365 620 360 Q 645 350 670 355 Q 685 320 690 300 Q 710 305 730 300 Q 715 310 705 325 Q 730 330 750 320 Q 720 345 700 355 Q 710 380 720 420 L 725 500" fill="#050806"/>
+                    <!-- Ground/Grasslands -->
+                    <rect y="490" width="800" height="110" fill="#050806"/>
+                    <!-- Wildlife outline (Giraffe & Elephant) -->
+                    <path d="M 320 490 Q 320 420 325 410 Q 320 405 315 410 Q 312 400 320 398 Q 328 398 328 412 Q 332 440 338 450 L 345 490 Z" fill="#050806"/>
+                    <path d="M 220 490 Q 210 460 200 458 Q 190 458 180 465 Q 185 455 200 450 Q 210 445 220 435 Q 230 430 240 445 L 250 490 Z" fill="#050806"/>
+                  </svg>
+                  
+                  <div class="floating-badge">
+                    <div class="badge-pulse"></div>
+                    <div>
+                      <p style="font-size: 0.8rem; margin: 0; color: #fff;">UTB Licensed & Accredited</p>
+                      <p style="font-size: 0.65rem; color: var(--accent-gold); margin: 0;">License: UTB/RTT/TT/2020/00330</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Multi-step Custom Trip Builder Section -->
+        <div class="section-padding" id="trip-builder-anchor">
+          <div class="container">
+            <div class="glass-panel builder-card animate-fade-in">
+              <h2 class="builder-title">Plan Your East African Journey</h2>
+              <p class="builder-subtitle">Choose your travel preferences and let our system suggest the perfect customized itinerary.</p>
+              
+              <!-- Step Node Indicators -->
+              <div class="builder-steps-indicator">
+                <div class="step-indicator-bar" id="step-progress-bar"></div>
+                <div class="builder-step-node active" data-step="1">1</div>
+                <div class="builder-step-node" data-step="2">2</div>
+                <div class="builder-step-node" data-step="3">3</div>
+                <div class="builder-step-node" data-step="4">4</div>
+              </div>
+              
+              <!-- Step 1: Select Style -->
+              <div class="builder-step-content active" data-step="1">
+                <h3 style="margin-bottom: 20px; text-align: center;">What is your primary travel focus?</h3>
+                <div class="builder-options-grid">
+                  <div class="builder-opt-card" data-val="trekking">
+                    <div class="builder-opt-card-title">Adventure Trekking</div>
+                    <div class="builder-opt-card-desc">High-altitude mountaineering & eco-climbs</div>
+                  </div>
+                  <div class="builder-opt-card" data-val="safari">
+                    <div class="builder-opt-card-title">Classic Safaris</div>
+                    <div class="builder-opt-card-desc">Primate tracking, game drives, boat cruises</div>
+                  </div>
+                  <div class="builder-opt-card" data-val="culture">
+                    <div class="builder-opt-card-title">Cultural Heritage</div>
+                    <div class="builder-opt-card-desc">Kingdom trails, historical sites, dance & foods</div>
+                  </div>
+                  <div class="builder-opt-card" data-val="leisure">
+                    <div class="builder-opt-card-title">Island & Beach Leisure</div>
+                    <div class="builder-opt-card-desc">Relaxation on Lake Victoria and Ssese beaches</div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 2: Date & Duration -->
+              <div class="builder-step-content" data-step="2">
+                <h3 style="margin-bottom: 20px; text-align: center;">Travel Schedule Details</h3>
+                <div class="form-group">
+                  <label class="form-label">Approximate Travel Month</label>
+                  <select class="form-input" id="builder-month">
+                    <option value="jan-feb">January - February (Dry/High Season)</option>
+                    <option value="mar-may">March - May (Wet/Low Season)</option>
+                    <option value="jun-aug">June - August (Dry/Peak Season)</option>
+                    <option value="sep-dec">September - December (Mid Season)</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Desired Duration</label>
+                  <select class="form-input" id="builder-duration">
+                    <option value="short">4 - 5 Days (Compact Highlights)</option>
+                    <option value="medium">6 - 8 Days (Complete Circuit)</option>
+                    <option value="long">9+ Days (In-depth Expeditions)</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Group Size</label>
+                  <input type="number" class="form-input" id="builder-group-size" min="1" max="25" value="2" />
+                </div>
+              </div>
+              
+              <!-- Step 3: Accessibility Needs -->
+              <div class="builder-step-content" data-step="3">
+                <h3 style="margin-bottom: 20px; text-align: center;">Do you require specialized accessibility support?</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); text-align: center; margin-bottom: 20px;">Maleng Travel is a regional pioneer in accessible travel services.</p>
+                <div class="builder-options-grid">
+                  <div class="builder-opt-card" data-val="none">
+                    <div class="builder-opt-card-title">Standard Safari</div>
+                    <div class="builder-opt-card-desc">No specialized physical aids required</div>
+                  </div>
+                  <div class="builder-opt-card" data-val="mobility">
+                    <div class="builder-opt-card-title">Mobility Support</div>
+                    <div class="builder-opt-card-desc">Sedan chairs, ramp entries, customized 4x4s</div>
+                  </div>
+                  <div class="builder-opt-card" data-val="sensory">
+                    <div class="builder-opt-card-title">Sensory Adaptations</div>
+                    <div class="builder-opt-card-desc">Visual summaries, sign-guides, sensory maps</div>
+                  </div>
+                  <div class="builder-opt-card" data-val="senior">
+                    <div class="builder-opt-card-title">Pace & Age Adaptations</div>
+                    <div class="builder-opt-card-desc">Relaxed pacing, ground floor rooms, flights</div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 4: Recommendations Output & Lead form -->
+              <div class="builder-step-content" data-step="4">
+                <h3 style="margin-bottom: 12px; text-align: center;">Your Custom Recommendations</h3>
+                <div id="builder-recommendation-box" style="margin-bottom: 20px; padding: 16px; background: rgba(10, 15, 12, 0.6); border-radius: 8px; border: 1px solid var(--accent-gold);">
+                  <!-- Dynamic text injected by JS -->
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-input" id="builder-name" placeholder="John Doe" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-input" id="builder-email" placeholder="john@example.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Special Requests / Requirements</label>
+                  <textarea class="form-input" id="builder-notes" rows="2" placeholder="e.g. customized dietary requirements, specialized medical kits, porter booking..."></textarea>
+                </div>
+              </div>
+              
+              <!-- Next / Back Buttons -->
+              <div class="builder-nav-btns">
+                <button class="btn-outline" id="builder-prev-btn" style="visibility: hidden;">Back</button>
+                <button class="btn-gold" id="builder-next-btn">Next Step</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Explore Uganda Section -->
+      <section id="explore-view" class="section-view section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">East Africa Ecosystems</span>
+            <h2 class="section-title">Explore Uganda</h2>
+            <p class="section-desc">From the glaciated peaks of the Rwenzori Mountains to the thick equatorial jungles of Bwindi, Uganda offers some of Africa's most diverse landscapes.</p>
+          </div>
+          
+          <div class="tours-grid">
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">⛰</div>
+              <h3>Rwenzori Range</h3>
+              <p>Known as the 'Mountains of the Moon', the Rwenzori range boasts glaciated slopes and high-alpine bogs. Traversing the Kilembe Trail provides stunning views of Margherita Peak, standing at 5,109m.</p>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">🦍</div>
+              <h3>Bwindi Impenetrable</h3>
+              <p>A ancient rainforest home to half of the world's remaining Mountain Gorillas. Its dense canopy, steep valleys, and muddy trails offer a high-immersion wildlife sanctuary.</p>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">🐆</div>
+              <h3>Queen Elizabeth Park</h3>
+              <p>Featuring sweeping grass savannas, volcanic craters, and channels. Home to the tree-climbing lions of Ishasha, giant elephants, hippos, and over 600 bird species.</p>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">🌋</div>
+              <h3>Mount Elgon Base</h3>
+              <p>Home to the world's largest volcanic base. A UNESCO Man & Biosphere Reserve filled with pristine waterfalls, volcanic calderas, coffee farms, and rich community culture.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Guided Expeditions Section -->
+      <section id="expeditions-view" class="section-view section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Signature Journeys</span>
+            <h2 class="section-title">Our Guided Expeditions</h2>
+            <p class="section-desc">Browse through our structured, visual day-by-day itineraries. Select style and difficulty filters to match your capabilities.</p>
+          </div>
+          
+          <!-- Filters -->
+          <div class="filter-bar">
+            <select class="filter-select" id="filter-category">
+              <option value="all">All Styles</option>
+              <option value="trekking">Adventure Trekking</option>
+              <option value="safari">Classic & Premium Safaris</option>
+              <option value="culture">Cultural Heritage</option>
+              <option value="leisure">Island Leisure</option>
+            </select>
+            
+            <select class="filter-select" id="filter-difficulty">
+              <option value="all">All Difficulties</option>
+              <option value="Easy">Easy</option>
+              <option value="Easy-Moderate">Easy-Moderate</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Moderate-Challenging">Moderate-Challenging</option>
+              <option value="Extreme">Extreme</option>
+            </select>
+            
+            <select class="filter-select" id="filter-duration">
+              <option value="all">Any Duration</option>
+              <option value="4-5">4 - 5 Days</option>
+              <option value="6-8">6 - 8 Days</option>
+              <option value="9+">9+ Days</option>
+            </select>
+          </div>
+          
+          <!-- Tours list container -->
+          <div class="tours-grid" id="tours-grid-container">
+            <!-- Dynamic elements generated in main.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Accessible Journeys Section -->
+      <section id="accessible-view" class="section-view section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Accessible Tourism</span>
+            <h2 class="section-title">Inclusive Safaris for All</h2>
+            <p class="section-desc">We believe the beauty of East Africa should be open to everyone. We adapt our operations, vehicles, and lodges to support travelers with physical, sensory, or age-related limitations.</p>
+          </div>
+          
+          <div class="access-grid">
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">♿</div>
+              <h3>Mobility & Wheelchair Safaris</h3>
+              <p>We solve local terrain challenges with modified 4x4 safari cruisers featuring ramp boarding systems, heavy-duty floor tie-downs, and wide-door entries. We selectively book lodges with paved, step-free access and roll-in showers.</p>
+              <ul>
+                <li>Custom 4x4 lift/ramp vehicles</li>
+                <li>Roll-in showers & accessible lodge reviews</li>
+                <li>Step-free ground itineraries</li>
+              </ul>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">🪑</div>
+              <h3>Primate Trekking Sedan Chairs</h3>
+              <p>Endangered mountain gorillas reside in steep, muddy rainforest valleys in Bwindi. We coordinate specialized steel-reinforced sedan chairs and traditional stretchers, carried securely by a team of 6 to 8 experienced local porters.</p>
+              <ul>
+                <li>Secured porter team (6 to 8 porters)</li>
+                <li>Pre-scheduled Bwindi park coordinate mapping</li>
+                <li>Comprehensive safety harnesses ($300-$500 pricing)</li>
+              </ul>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">👁</div>
+              <h3>Sensory & Visual Impairment Guiding</h3>
+              <p>We curate tactile and auditory-rich itineraries focusing on local sounds, forest bird calls, wood workshops, musical performances, and physical touch points, supported by description-focused guiding.</p>
+              <ul>
+                <li>Sensory forest walks & bird-song logs</li>
+                <li>Braille-equivalent and high-contrast briefings</li>
+                <li>Tactile cultural encounters</li>
+              </ul>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">🦻</div>
+              <h3>Deaf & Hearing Impairment Guides</h3>
+              <p>We feature professional guides trained in international sign language and standard wildlife visual codes. We provide modified visual briefing booklets and safety cards to ensure absolute clarity during game drives.</p>
+              <ul>
+                <li>Sign-language certified safari guides</li>
+                <li>Visual safety aids & animal checksheets</li>
+                <li>Interactive visual route boards</li>
+              </ul>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <div class="access-icon-wrapper">👴</div>
+              <h3>Seniors & Relaxed Pace Safaris</h3>
+              <p>Ideal for multi-generational families and senior travelers. We build slower itineraries containing extra rest periods, ground-floor accessible rooms, and scheduled regional flights to avoid long, tiring road drives.</p>
+              <ul>
+                <li>Slow-paced private itineraries</li>
+                <li>Domestic flight links (Entebbe-Kihihi-Kasese)</li>
+                <li>First-aid and emergency oxygen systems on board</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Trade & Partners Section -->
+      <section id="partners-view" class="section-view section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">B2B & Professional Network</span>
+            <h2 class="section-title">Trade & Partners Portal</h2>
+            <p class="section-desc">Join our professional guide network in East Africa, or register as an affiliate agent/blogger to represent our premium itineraries.</p>
+          </div>
+          
+          <div class="partner-tabs">
+            <button class="btn-gold" id="partner-tab-guide">Join as a Guide</button>
+            <button class="btn-outline" id="partner-tab-affiliate">B2B Affiliate Program</button>
+          </div>
+          
+          <div class="partner-grid">
+            <!-- Left: Portal Actions -->
+            <div class="glass-panel access-card" id="partner-form-pane">
+              <!-- Guide Form (Default active) -->
+              <div id="guide-portal">
+                <h3 style="margin-bottom: 20px;">Guide Registration & Credentials</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">Local professional guides with valid UTB certification and emergency first-aid credentials are invited to register.</p>
+                
+                <form id="guide-form" onsubmit="event.preventDefault(); alert('Registration submitted successfully! Our operations director will review your UTB credentials.');">
+                  <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" required placeholder="Robert Mukasa" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">UTB License Number</label>
+                    <input type="text" class="form-input" required placeholder="UTB/TG/..." />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">First Aid Certificate (Expiry Date)</label>
+                    <input type="date" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Languages Spoken</label>
+                    <input type="text" class="form-input" placeholder="English, German, Luganda..." />
+                  </div>
+                  <button type="submit" class="btn-gold" style="width: 100%;">Submit Credentials</button>
+                </form>
+              </div>
+              
+              <!-- Affiliate Form (Hidden default) -->
+              <div id="affiliate-portal" style="display: none;">
+                <h3 style="margin-bottom: 20px;">Affiliate Partner Application</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">For international travel agencies, luxury booking sites, and travel bloggers. Track referrals with unique tracking codes.</p>
+                
+                <form id="affiliate-form" onsubmit="event.preventDefault(); alert('Affiliate application received. We will send your unique agency booking code via email.');">
+                  <div class="form-group">
+                    <label class="form-label">Agency / Blogger Name</label>
+                    <input type="text" class="form-input" required placeholder="Elite Escapes Ltd" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Business Website</label>
+                    <input type="url" class="form-input" required placeholder="https://..." />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Partner Category</label>
+                    <select class="form-input">
+                      <option>Travel Agent (B2B)</option>
+                      <option>Travel Blogger / Influencer</option>
+                      <option>Accredited Destination Consultant</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn-gold" style="width: 100%;">Apply for Agency Code</button>
+                </form>
+              </div>
+            </div>
+            
+            <!-- Right: Commission & Marketing Assets -->
+            <div class="glass-panel comm-preview">
+              <div class="comm-header">B2B Commission Calculator</div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Estimate your monthly earnings based on referrals of our premium safaris.</p>
+              
+              <div class="form-group">
+                <label class="form-label">Select Average Tour Package</label>
+                <select class="form-input" id="calc-package">
+                  <option value="4320">9-Day Rwenzori Peak Trek ($4,320)</option>
+                  <option value="2520">6-Day Gorilla & Wildlife Safari ($2,520)</option>
+                  <option value="2320">4-Day Premium Gorilla Fly-in ($2,320)</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Referrals Per Month</label>
+                <input type="number" class="form-input" id="calc-referrals" value="5" min="1" max="100" />
+              </div>
+              
+              <div class="comm-metric-grid">
+                <div class="comm-metric-card">
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">Standard Commission (10%)</span>
+                  <div class="comm-value" id="calc-result-comm">$1,260</div>
+                </div>
+                <div class="comm-metric-card">
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">Total Invoiced Revenue</span>
+                  <div class="comm-value" id="calc-result-rev" style="color: var(--accent-sand); font-size: 1.5rem;">$12,600</div>
+                </div>
+              </div>
+              
+              <div style="border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 20px;">
+                <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; color: var(--text-primary);">Pre-packaged Marketing Resources</p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <button class="btn-outline" style="padding: 6px 12px; font-size: 0.75rem;" onclick="alert('Downloading marketing images ZIP...');">Download Media Pack</button>
+                  <button class="btn-outline" style="padding: 6px 12px; font-size: 0.75rem;" onclick="alert('Downloading PDF brochures...');">PDF Itinerary Brochures</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Corporate Integrity Section -->
+      <section id="integrity-view" class="section-view section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Governance & Trust</span>
+            <h2 class="section-title">Corporate Integrity</h2>
+            <p class="section-desc">Maleng Travel operates with full transparent liability cover and official credentials. We separate our high-value travel transactions from other commercial entities.</p>
+          </div>
+          
+          <div class="partner-grid">
+            <div class="glass-panel access-card">
+              <h3 style="margin-bottom: 16px;">Our Founding History</h3>
+              <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">Founded in 2008 in Kampala, Uganda, Maleng Travel is a registered private Destination Management Company (DMC) and tour operator. Over the past 18 years, we have built a reputation for local logistical excellence and ecological commitment.</p>
+              <p style="font-size: 0.95rem; color: var(--text-secondary);">While our physical headquarters shares space with sister company Master Wood Investments Ltd at Plot 1 Ofungi Rise, Kitintale, our financial, booking, licensing, and client communication services are completely isolated to protect travelers and ensure professional compliance.</p>
+            </div>
+            
+            <div class="glass-panel access-card">
+              <h3 style="margin-bottom: 16px;">SATIB Safety & Crisis Management</h3>
+              <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">We carry robust public liability, professional indemnity, and search-and-rescue policies underwritten by Safari & Tourism Insurance Brokers (SATIB).</p>
+              
+              <div style="margin-bottom: 16px;">
+                <p style="font-weight: 600; color: var(--accent-gold); font-size: 0.95rem;">✓ SATIB24 Crisis Call Helpline</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-left: 20px;">24/7 immediate assistance, emergency helicopter evacuations, and clinical dispatch in remote locations.</p>
+              </div>
+              <div style="margin-bottom: 16px;">
+                <p style="font-weight: 600; color: var(--accent-gold); font-size: 0.95rem;">✓ Professional Indemnity</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-left: 20px;">Operational error safety nets protecting customer bookings and itinerary changes.</p>
+              </div>
+              <div>
+                <p style="font-weight: 600; color: var(--accent-gold); font-size: 0.95rem;">✓ Passenger Liability Cover</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-left: 20px;">Full coverage for our customized safari cruisers, including ground transfers and safari game drives.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Trust badges component -->
+          <div class="trust-badges">
+            <div class="badge-item">
+              <div class="badge-graphic">🇺🇬</div>
+              <div class="badge-name">UTB License</div>
+              <div class="badge-desc">Uganda Tourism Board Licensed Operator (UTB/RTT/TT/2020/00330)</div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-graphic">🤝</div>
+              <div class="badge-name">AUTO Badge</div>
+              <div class="badge-desc">Accredited member of the Association of Uganda Tour Operators</div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-graphic">🛡️</div>
+              <div class="badge-name">SATIB Cover</div>
+              <div class="badge-desc">Comprehensive African Tourism Liability Insurance Shield</div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-graphic">⭐</div>
+              <div class="badge-name">5.0 Rating</div>
+              <div class="badge-desc">5.0/5 Star rating across verified SafariBookings reports</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Itinerary Day-by-Day Modal -->
+    <div class="modal-overlay" id="itinerary-modal">
+      <div class="modal-content-card">
+        <div class="modal-close-btn" id="close-itinerary-modal">✕</div>
+        <div class="itinerary-detail-layout" id="modal-itinerary-data">
+          <!-- Dynamic contents injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Checkout Simulator Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+      <div class="modal-content-card">
+        <div class="modal-close-btn" id="close-checkout-modal">✕</div>
+        <div class="checkout-modal">
+          <h2 style="margin-bottom: 8px; font-size: 1.8rem; text-align: center;">Confirm Your Expedition Booking</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; text-align: center; margin-bottom: 32px;">Secure B2C Transaction Environment | Maleng Travel isolated system</p>
+          
+          <div class="checkout-grid">
+            <!-- Left: Method selection -->
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-primary);">1. Select Secure Channel</h3>
+              <div class="payment-methods">
+                <div class="payment-method-card selected" data-method="bank">
+                  <div class="payment-method-icon">🏦</div>
+                  <div>
+                    <p style="font-weight: 600; font-size: 0.95rem;">Direct Bank Transfer</p>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Best for large balances. Low bank processing fees.</p>
+                  </div>
+                </div>
+                
+                <div class="payment-method-card" data-method="dpo">
+                  <div class="payment-method-icon">💳</div>
+                  <div>
+                    <p style="font-weight: 600; font-size: 0.95rem;">DPO Pay Gateway</p>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Visa, Mastercard, Amex. 3.5%-4.0% fee.</p>
+                  </div>
+                </div>
+                
+                <div class="payment-method-card" data-method="pesapal">
+                  <div class="payment-method-icon">📱</div>
+                  <div>
+                    <p style="font-weight: 600; font-size: 0.95rem;">Pesapal Gateway</p>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Mobile Money (MTN/Airtel), debit. 3.0% fee.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Details pane -->
+            <div class="glass-panel" style="padding: 24px;" id="payment-details-pane">
+              <!-- Rendered Dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-main">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo-group" style="margin-bottom: 20px;">
+            <div class="logo-icon">M</div>
+            <div class="logo-text">Maleng<span>Travel</span></div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">Licensed Destination Management Company and Tour Operator. Designing immersive, bespoke, and accessible expeditions across East Africa since 2008.</p>
+          <div style="display: flex; gap: 12px; font-size: 1.2rem;">
+            <a href="https://twitter.com/MalengTravel" target="_blank" title="Twitter" class="footer-contact-icon">🐦</a>
+            <a href="https://youtube.com/@MalengTravel" target="_blank" title="YouTube" class="footer-contact-icon">📺</a>
+            <a href="https://www.safaribookings.com" target="_blank" title="SafariBookings" class="footer-contact-icon">🦁</a>
+          </div>
+        </div>
+        
+        <div>
+          <div class="footer-title">Guided Expeditions</div>
+          <ul class="footer-links">
+            <li><span style="cursor:pointer;" class="footer-nav-tour" data-id="rwenzori-margherita-trek">Rwenzori 9-Day Trek</span></li>
+            <li><span style="cursor:pointer;" class="footer-nav-tour" data-id="mount-elgon-hiking-circuit">Mount Elgon 5-Day Hike</span></li>
+            <li><span style="cursor:pointer;" class="footer-nav-tour" data-id="uganda-gorilla-wildlife-safari">6-Day Gorilla & Wildlife Safari</span></li>
+            <li><span style="cursor:pointer;" class="footer-nav-tour" data-id="busoga-buganda-kingdoms-tour">6-Day Cultural Heritage Tour</span></li>
+            <li><span style="cursor:pointer;" class="footer-nav-tour" data-id="bwindi-gorilla-tracking-fly-in">4-Day Gorilla (Fly-in)</span></li>
+            <li><span style="cursor:pointer;" class="footer-nav-tour" data-id="leisure-island-retreats">Ssese Beach Resort Stay</span></li>
+          </ul>
+        </div>
+        
+        <div>
+          <div class="footer-title">Useful Information</div>
+          <ul class="footer-links">
+            <li><span style="cursor:pointer;" data-section="accessible" class="footer-nav-link">Accessibility Logistics</span></li>
+            <li><span style="cursor:pointer;" data-section="integrity" class="footer-nav-link">SATIB Emergency Procedures</span></li>
+            <li><span style="cursor:pointer;" data-section="partners" class="footer-nav-link">Join Guide Network</span></li>
+            <li><span style="cursor:pointer;" data-section="partners" class="footer-nav-link">B2B Affiliate Portal</span></li>
+            <li><span style="cursor:pointer;" data-section="integrity" class="footer-nav-link">Terms & Conditions</span></li>
+          </ul>
+        </div>
+        
+        <div>
+          <div class="footer-title">Contact & Head Office</div>
+          <ul class="footer-contact">
+            <li>
+              <span class="footer-contact-icon">📍</span>
+              <span>Plot 1, Ofungi Rise, Kitintale<br>Kampala, Uganda</span>
+            </li>
+            <li>
+              <span class="footer-contact-icon">📞</span>
+              <span>+256-778-278-853</span>
+            </li>
+            <li>
+              <span class="footer-contact-icon">✉</span>
+              <span>book@malengtravel.net</span>
+            </li>
+            <li>
+              <span class="footer-contact-icon">🛡</span>
+              <span>UTB Operating License:<br>UTB/RTT/TT/2020/00330</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="container footer-bottom">
+        <div>
+          &copy; 2026 Maleng Travel. All rights reserved. Secure Cloud Environment isolated from industrial timber ventures.
+        </div>
+        <div class="footer-credits">
+          Accredited by UTB | AUTO Member | Insured by SATIB
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
