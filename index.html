@@ -21,6 +21,7 @@
           <a href="#explore" class="nav-link" data-section="explore">Explore Uganda</a>
           <a href="#expeditions" class="nav-link" data-section="expeditions">Guided Expeditions</a>
           <a href="#accessible" class="nav-link" data-section="accessible">Accessible Journeys</a>
+          <a href="#concierge" class="nav-link" data-section="concierge">Safari Concierge</a>
           <a href="#partners" class="nav-link" data-section="partners">Trade &amp; Partners</a>
           <a href="#integrity" class="nav-link" data-section="integrity">Corporate Integrity</a>
         </nav>
@@ -362,6 +363,51 @@
                 <li>Domestic flight links (Entebbe-Kihihi-Kasese)</li>
                 <li>First-aid and emergency oxygen systems on board</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4.5 Safari Concierge Section -->
+      <section id="concierge-view" class="section-view section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">UTB Recommended Assistant</span>
+            <h2 class="section-title">Safari Concierge</h2>
+            <p class="section-desc">Get verified, Uganda Tourism Board (UTB) recommended advice for your trip. Chat with our virtual concierge regarding eating places, nightlife, destinations, security guidelines, and emergency contacts.</p>
+          </div>
+
+          <div class="partner-grid">
+            <!-- Left Panel: Chat Interface -->
+            <div class="glass-panel" style="display: flex; flex-direction: column; height: 500px; padding: 24px; justify-content: space-between;">
+              <div id="concierge-chat-log" style="flex-grow: 1; overflow-y: auto; padding: 12px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 16px;">
+                <!-- Chat log entries dynamically loaded -->
+              </div>
+              
+              <!-- Chat inputs -->
+              <div style="display: flex; gap: 12px; border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 16px;">
+                <input type="text" id="concierge-chat-input" class="form-input" style="flex-grow: 1;" placeholder="Ask about restaurants, nightlife, safaris, or security advice..." />
+                <button id="concierge-send-btn" class="btn-gold" style="padding: 12px 24px;">Send</button>
+              </div>
+            </div>
+
+            <!-- Right Panel: Info & Preset Topics -->
+            <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding-bottom: 12px;">Quick Travel Inquiries</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">Select one of our preset quick-inquiry buttons to instantly receive officially recommended guidelines:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                  <button class="btn-outline concierge-preset-btn" data-topic="eating" style="justify-content: flex-start; text-align: left; padding: 10px 16px;">🍽️ UTB Certified Eating Places</button>
+                  <button class="btn-outline concierge-preset-btn" data-topic="nightlife" style="justify-content: flex-start; text-align: left; padding: 10px 16px;">🍹 Secure Kampala Nightlife</button>
+                  <button class="btn-outline concierge-preset-btn" data-topic="destinations" style="justify-content: flex-start; text-align: left; padding: 10px 16px;">🌍 Popular UTB Destinations</button>
+                  <button class="btn-outline concierge-preset-btn" data-topic="security" style="justify-content: flex-start; text-align: left; padding: 10px 16px;">🛡️ Security Advice &amp; Emergency Contacts</button>
+                </div>
+              </div>
+
+              <div style="border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 20px; font-size: 0.8rem; color: var(--text-muted);">
+                <p>⚠️ <strong>UTB Notice:</strong> All details, operating licenses, and contact references displayed by this concierge are sourced strictly from accredited Ugandan tourism operators to guarantee your comfort, security, and well-being.</p>
+              </div>
             </div>
           </div>
         </div>

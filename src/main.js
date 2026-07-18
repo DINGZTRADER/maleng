@@ -1,5 +1,6 @@
 import './style.css';
 import { tours } from './toursData.js';
+import { conciergeData } from './conciergeData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTourFilters();
   initPartnerPortal();
   initCommissionCalculator();
+  initConciergeChat();
   initCheckout();
   injectBaseSchema();
 });
@@ -924,4 +926,129 @@ function injectTourSchema(tour) {
   tourSchemaScript.type = 'application/ld+json';
   tourSchemaScript.textContent = JSON.stringify(tourSchema, null, 2);
   document.head.appendChild(tourSchemaScript);
+}
+
+// --- SAFARI CONCIERGE CHAT ENGINE ---
+function initConciergeChat() {
+  const chatLog = document.getElementById('concierge-chat-log');
+  const chatInput = document.getElementById('concierge-chat-input');
+  const sendBtn = document.getElementById('concierge-send-btn');
+  const presetBtns = document.querySelectorAll('.concierge-preset-btn');
+  
+  if (!chatLog) return;
+
+  // Add initial message
+  addChatBubble("concierge", "Hello! I am your Maleng Travel Safari Concierge. I am programmed to share ONLY Uganda Tourism Board (UTB) recommended options and emergency support information. How can I assist you with your East African planning today? You can type a question or select a quick topic on the right!");
+
+  sendBtn.addEventListener('click', () => {
+    handleUserMessage();
+  });
+
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handleUserMessage();
+    }
+  });
+
+  presetBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const topic = e.currentTarget.getAttribute('data-topic');
+      handlePresetTopic(topic);
+    });
+  });
+
+  function handleUserMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    addChatBubble("user", text);
+    chatInput.value = '';
+    
+    // Simulate thinking delay
+    setTimeout(() => {
+      replyToQuery(text.toLowerCase());
+    }, 800);
+  }
+
+  function addChatBubble(sender, text) {
+    const bubble = document.createElement('div');
+    bubble.className = `chat-bubble ${sender}`;
+    
+    const heading = document.createElement('div');
+    heading.className = 'chat-bubble-heading';
+    heading.textContent = sender === 'concierge' ? '✦ Safari Concierge (UTB Verified)' : 'You';
+    
+    const content = document.createElement('div');
+    content.innerHTML = text.replace(/\n/g, '<br>');
+
+    bubble.appendChild(heading);
+    bubble.appendChild(content);
+    chatLog.appendChild(bubble);
+    
+    // Auto scroll to bottom
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function handlePresetTopic(topic) {
+    if (topic === "eating") {
+      addChatBubble("user", "What are the UTB recommended eating places?");
+      setTimeout(() => {
+        const placesText = conciergeData.eatingPlaces.map(p => `<strong>${p.name}</strong><br>📍 ${p.location}<br>🍴 Specialty: ${p.specialty}<br>${p.description}`).join('<br><br>');
+        addChatBubble("concierge", `Here are the officially approved dining establishments in Uganda:<br><br>${placesText}`);
+      }, 700);
+    } else if (topic === "nightlife") {
+      addChatBubble("user", "Can you suggest safe nightlife options?");
+      setTimeout(() => {
+        const lifeText = conciergeData.nightlife.map(n => `<strong>${n.name}</strong><br>📍 ${n.location}<br>🎶 Style: ${n.style}<br>${n.description}`).join('<br><br>');
+        addChatBubble("concierge", `Here are the UTB-compliant and highly secure nightlife options in Kampala:<br><br>${lifeText}`);
+      }, 700);
+    } else if (topic === "destinations") {
+      addChatBubble("user", "What are the popular destinations in Uganda?");
+      setTimeout(() => {
+        const destText = conciergeData.destinations.map(d => `<strong>${d.name}</strong><br>⭐ Highlights: ${d.highlights}<br>📅 Best Time to Visit: ${d.bestTime}<br>${d.description}`).join('<br><br>');
+        addChatBubble("concierge", `Here are popular tourist destinations recommended by the Uganda Tourism Board:<br><br>${destText}`);
+      }, 700);
+    } else if (topic === "security") {
+      addChatBubble("user", "Provide security advice and emergency contacts.");
+      setTimeout(() => {
+        const contactsText = conciergeData.securityContacts.map(c => `📞 <strong>${c.agency}</strong>: ${c.phone}<br>ℹ️ ${c.notes}`).join('<br><br>');
+        const adviceText = conciergeData.safetyAdvice.map(a => `• ${a}`).join('<br>');
+        addChatBubble("concierge", `<strong>Emergency Contacts:</strong><br>${contactsText}<br><br><strong>Security Guidelines:</strong><br>${adviceText}`);
+      }, 700);
+    }
+  }
+
+  function replyToQuery(query) {
+    // Keyword Matching
+    if (query.includes('eat') || query.includes('food') || query.includes('restaurant') || query.includes('cafe') || query.includes('dinner')) {
+      const placesText = conciergeData.eatingPlaces.map(p => `<strong>${p.name}</strong><br>📍 ${p.location}<br>🍴 Specialty: ${p.specialty}<br>${p.description}`).join('<br><br>');
+      addChatBubble("concierge", `Here are the UTB-approved eating options you requested:<br><br>${placesText}`);
+    } 
+    else if (query.includes('night') || query.includes('club') || query.includes('bar') || query.includes('dance') || query.includes('drink')) {
+      const lifeText = conciergeData.nightlife.map(n => `<strong>${n.name}</strong><br>📍 ${n.location}<br>🎶 Style: ${n.style}<br>${n.description}`).join('<br><br>');
+      addChatBubble("concierge", `For night activities, we recommend these highly secure, UTB-compliant spots in Kampala:<br><br>${lifeText}`);
+    }
+    else if (query.includes('safe') || query.includes('secure') || query.includes('police') || query.includes('emergency') || query.includes('contact') || query.includes('phone') || query.includes('danger')) {
+      const contactsText = conciergeData.securityContacts.map(c => `📞 <strong>${c.agency}</strong>: ${c.phone}<br>ℹ️ ${c.notes}`).join('<br><br>');
+      const adviceText = conciergeData.safetyAdvice.map(a => `• ${a}`).join('<br>');
+      addChatBubble("concierge", `<strong>Emergency Security Directory:</strong><br>${contactsText}<br><br><strong>Safety Protocols:</strong><br>${adviceText}`);
+    }
+    else if (query.includes('destination') || query.includes('park') || query.includes('gorilla') || query.includes('safari') || query.includes('visit') || query.includes('uganda') || query.includes('trek')) {
+      const destText = conciergeData.destinations.map(d => `<strong>${d.name}</strong><br>⭐ Highlights: ${d.highlights}<br>📅 Best Season: ${d.bestTime}<br>${d.description}`).join('<br><br>');
+      addChatBubble("concierge", `Here are the top-rated UTB destinations for your safari planning:<br><br>${destText}`);
+    }
+    else if (query.includes('help') || query.includes('faq') || query.includes('question') || query.includes('permit') || query.includes('water')) {
+      // Find matching FAQs
+      const matchedFaq = conciergeData.faqs.find(f => query.includes(f.q.split(' ')[0].toLowerCase()) || query.includes(f.q.split(' ')[1].toLowerCase()));
+      if (matchedFaq) {
+        addChatBubble("concierge", `<strong>Q: ${matchedFaq.q}</strong><br>A: ${matchedFaq.a}`);
+      } else {
+        const faqsText = conciergeData.faqs.map(f => `<strong>Q: ${f.q}</strong><br>A: ${f.a}`).join('<br><br>');
+        addChatBubble("concierge", `Here are some frequently asked tourist questions answered according to UTB advice:<br><br>${faqsText}`);
+      }
+    }
+    else {
+      addChatBubble("concierge", "I'm not sure I understood that request. I am only programmed to discuss UTB-approved eating places, secure nightlife, key national destinations, and security advice/contacts. Try searching for 'restaurants', 'nightlife', 'emergency contacts', or 'popular parks'.");
+    }
+  }
 }

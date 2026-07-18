@@ -1187,3 +1187,40 @@ input, select, textarea, button {
     grid-template-columns: 1fr;
   }
 }
+
+/* Safari Concierge Chat Styles */
+.chat-bubble {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: fadeInUp 0.3s ease;
+}
+
+.chat-bubble.concierge {
+  align-self: flex-start;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  border-top-left-radius: 2px;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--accent-gold);
+  color: #0a0f0c;
+  font-weight: 500;
+  border-top-right-radius: 2px;
+}
+
+.chat-bubble-heading {
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+}
+
+.chat-bubble.user .chat-bubble-heading {
+  color: #0a0f0c;
+}
+
