@@ -18,22 +18,24 @@ function initNavigation() {
   const sections = document.querySelectorAll('.section-view');
   
   function navigateTo(sectionId) {
+    const targetSection = document.getElementById(`${sectionId}-view`);
+    if (!targetSection) return;
+
     // Hide all sections
     sections.forEach(sec => sec.classList.remove('active'));
     
     // Show target section
-    const targetSection = document.getElementById(`${sectionId}-view`);
-    if (targetSection) {
-      targetSection.classList.add('active');
-      window.scrollTo(0, 0);
-    }
+    targetSection.classList.add('active');
+    window.scrollTo(0, 0);
     
     // Update active class on nav links
     document.querySelectorAll('.nav-link').forEach(link => {
       if (link.getAttribute('data-section') === sectionId) {
         link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
       } else {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
       }
     });
 
@@ -50,6 +52,7 @@ function initNavigation() {
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+      e.preventDefault();
       const sectionId = e.currentTarget.getAttribute('data-section');
       navigateTo(sectionId);
       
@@ -105,6 +108,11 @@ function initNavigation() {
 
   // Listen to popstate for back button support
   window.addEventListener('popstate', () => {
+    const hash = window.location.hash.replace('#', '') || 'home';
+    navigateTo(hash);
+  });
+
+  window.addEventListener('hashchange', () => {
     const hash = window.location.hash.replace('#', '') || 'home';
     navigateTo(hash);
   });
