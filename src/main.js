@@ -1,5 +1,9 @@
 import './style.css';
 import { tours } from './toursData.js';
+import { inject } from '@vercel/analytics';
+
+// Initialize Vercel Web Analytics
+inject();
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
