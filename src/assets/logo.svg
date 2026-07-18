@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" width="100%" height="100%">
+  <defs>
+    <!-- Define fonts for standalone rendering -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,600;1,400&amp;display=swap');
+      .logo-title {
+        font-family: 'Playfair Display', 'Georgia', serif;
+        font-size: 52px;
+        fill: #f4f7f5;
+        font-weight: 700;
+      }
+      .logo-subtitle {
+        font-family: 'Outfit', 'Arial', sans-serif;
+        font-size: 16px;
+        fill: #d4af37;
+        letter-spacing: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+
+  <!-- Left Icon Group -->
+  <g transform="translate(10, 10)">
+    <!-- Central Black/Dark Diamond -->
+    <rect x="55" y="55" width="50" height="50" transform="rotate(45 80 80)" fill="#0a0f0c" stroke="#d4af37" stroke-width="2" />
+    
+    <!-- Top-Left Corner Piece (Khaki/Olive Green) -->
+    <path d="M 45 45 L 70 20 L 50 20 L 25 45 Z" fill="#7d925b" />
+    <path d="M 25 45 L 25 65 L 15 55 Z" fill="#607343" />
+    
+    <!-- Top-Right Corner Piece (Bronze/Brown) -->
+    <path d="M 115 45 L 90 20 L 110 20 L 135 45 Z" fill="#9c724e" />
+    
+    <!-- Bottom-Left Corner Piece (Ochre/Mustard Yellow) -->
+    <path d="M 45 115 L 70 140 L 50 140 L 25 115 Z" fill="#c69c3a" />
+    
+    <!-- Bottom-Right Corner Piece (Sandy Beige/Light Tan) -->
+    <path d="M 115 115 L 90 140 L 110 140 L 135 115 Z" fill="#d9c8a9" />
+  </g>
+
+  <!-- Text Group -->
+  <!-- "Maleng" in custom brushed handwriting visual path style -->
+  <g transform="translate(180, 75)">
+    <!-- Brushed style text fallback + stylized Playfair display curves -->
+    <text class="logo-title" x="0" y="0">Maleng</text>
+    
+    <!-- Dividing Line -->
+    <line x1="2" y1="12" x2="225" y2="12" stroke="#d4af37" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+    <line x1="225" y1="12" x2="250" y2="12" stroke="#f4f7f5" stroke-width="1" stroke-linecap="round" opacity="0.5" />
+    
+    <!-- "TRAVEL" subtitle -->
+    <text class="logo-subtitle" x="5" y="36">T R A V E L</text>
+  </g>
+
+  <!-- Ground & Wildlife Silhouettes Group (Lower Right) -->
+  <g transform="translate(180, 125)" opacity="0.85">
+    <!-- Ground line -->
+    <path d="M 0 15 L 130 15 L 160 15 L 250 15" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Small Hills/Huts Silhouette -->
+    <path d="M 50 15 Q 55 5 60 15 M 58 15 Q 61 8 64 15" fill="none" stroke="#9cb1a4" stroke-width="1.5" />
+    
+    <!-- Gorilla Silhouette -->
+    <path d="M 120 15 C 119 12 120 8 122 8 C 124 8 125 10 126 12 C 127 10 129 11 130 13 C 131 15 128 15 128 15 Z" fill="#f4f7f5" transform="scale(1.2) translate(-20, -2)" />
+    
+    <!-- Crane/Bird Silhouette -->
+    <path d="M 160 15 L 160 5 M 160 5 C 158 5 156 3 157 2 C 158 1 161 3 162 4 Z M 160 8 Q 164 8 165 15" fill="none" stroke="#d4af37" stroke-width="1" />
+  </g>
+</svg>
